@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>  Design Hotels  </title>
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<meta name='Title' content=' Design Hotels '>
+<meta name='Subject' content=' Design Hotels  클린코딩'>
+<meta name='Keywords' content='Design Hotels, Hotels,Design'>
+<meta name='Publisher' content='hyun'>
+<meta name='Description' content='Design Hotels  클린코딩, 데이타 불러오기'>
+<meta name='Author-Date' content='20230722'>
+
+
+<!-- 접근성 텍스트(skip) 숨김 -->
+<style>#skip{overflow: hidden; position:absolute; width:0; height:0; line-height:0; text-indent:-9999px;}</style>
+
+<!-- 파비콘 -->
+<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+<link rel="icon" href="./favicon.ico" type="image/x-icon">
+
+<!-- 폰트어썸 -->
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+
+<!-- 구글폰트 아이콘 -->
+<link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0' />
+
+<!-- CSS 리셋 -->
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css'>
+
+<!-- 제이쿼리 3.7 CDN -->
+<script src='https://code.jquery.com/jquery-3.7.0.min.js' crossorigin='anonymous'></script>
+
+<!-- 로컬 CSS -->
+<link rel='stylesheet' href='./css/style.css'/>
+
+<!-- 로컬 js -->
+<script src='./js/script.js' defer></script>
+<script src='./js/data.js' defer></script>
+
+</head>
+<body>
+<!-- 시각장애인 웹 접근성을 위한 skip _ 지우지않아도 됩니다. -->
+
+<ul id='skip'>
+   <li><a href='#header'>헤더 바로가기</a></li>
+   <li><a href='#nav'>메뉴 바로가기</a></li>
+   <li><a href='#content'>내용 바로가기</a></li>
+</ul>
+
+<div id="wrap">
+    <div class="mobile-menu">
+        <div>
+            <div class="mobile-modal-menu-bar">
+                <span class="modal-logoBt-wrap">
+                    <a href="#" class="logoBt" title="logo">
+                        <img src="./img/logo-icon-dh.png" alt="logo">
+                    </a>
+                </span>
+                <span class="modal-appBar-wrap">
+                    <a href="#" class="appbarCloseBt" title="appbarBt">
+                        <i class="appbar-line appbar-line1"></i>
+                        <i class="appbar-line appbar-line2"></i>
+                    </a>
+                </span>
+            </div>
+            <div class="mobile-modal-menu-list">
+                <ul>
+                    <li><a href="#">HOTELS & RESORTS</a></li>
+                    <li><a href="#">DEALS</a></li>
+                    <li><a href="#">ORIGINAL EXPERIENCES</a></li>
+                    <li><a href="#">CULTURE</a></li>
+                    <li><a href="#">GALLERY</a></li>
+                    <li><a href="#">STORE</a></li>
+                    <li><a href="#">ABOUT US</a></li>
+                </ul>
+            </div>
+            <div class="mobile-modal-menu-footer">
+                <p>
+                    Become a member <br>
+                    to enjoy the best benefits!
+                </p>
+                <div class="mobile-modal-menu-footer-button">
+                    <button>JOIN</button>
+                    <button>LOGIN</button>
+                    <button>SUBSCRIBE</button>
+                </div>
+                <div class="mobile-modal-menu-footer-sns">
+                    <span><a href="#"><i class="fab fa-instagram"></i></a></span>
+                    <span><a href="#"><i class="fab fa-facebook-f"></i></a></span>
+                    <span><a href="#"><i class="fab fa-twitter"></i></a></span>
+                    <span><a href="#"><i class="fab fa-youtube"></i></a></span>
+                    <span><a href="#"><i class="fab fa-pinterest-square"></i></a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header id="header">
+        <div class="container">
+            <div class="header-mobile-menu">
+                <div class="header-app-menu"> 
+                    <span class="app-bar-wrap">
+                        <a href="javascript:" class="appbarBt" title="">
+                            <i class="appbar-line appbar-line1"></i>
+                            <i class="appbar-line appbar-line2"></i>
+                            <i class="appbar-line appbar-line3"></i>
+                        </a>
+                    </span>
+                    <h1><a href="index.html" class="logobt"><img src="./img/logo.png" alt="logo"></a></h1>
+                    <span class="app-search-wrap">
+                        <a href="javascript:" class="bppbar-bt1">
+                            <i class="fas fa-search"></i>
+                        </a>
+                    </span>
+                </div> 
+            </div>
+            <aside>
+                <span><a href="#" class="bt" title="joinBt">Join</a></span>
+                <span><a href="#" class="bt" title="Ligin">Login</a></span>
+                <span><a href="#" class="bt" title="Subscribe">Subscribe</a></span>
+            </aside>
+            <div class="header-logoNav">
+                <h1><a href="index.html"><img src="./img/logo.png" alt="mainLogo"></a></h1>
+                <nav id="nav">
+                    <span><a href="#" class="mainBt" title="search"><i class="fas fa-search"></i></a></span>
+                    <span><a href="#" class="mainBt" title="HOTELS & RESORTS">HOTELS & RESORTS</a></span>
+                    <span><a href="#" class="mainBt" title="DEALS">DEALS</a></span>
+                    <span><a href="#" class="mainBt addMainBt" title="ORIGINAL EXPERIENCES">ORIGINAL EXPERIENCES</a></span>
+                    <span><a href="#" class="mainBt" title="CULTURE">CULTURE</a></span>
+                    <span><a href="#" class="mainBt" title="GALLERY">GALLERY</a></span>
+                    <span><a href="#" class="mainBt" title="STORE">STORE</a></span>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main id="main">
+        <section id="section1">
+            <div>
+                <div class="video">
+                    <video id="mainVideo" autoplay muted>
+                        <source src="video/main.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="m-again">
+                    <h3><a href="javascript:" class="watchagain">watch again</a></h3>
+                </div>
+                <div class="m-next-setcion" >
+                    <span><a href="javascript:" class="nextsection">explore stories</a></span>
+                </div>
+                <div class="m-icon-footer">
+                    <div class="icon-footer-left">
+                        <ul>
+                            <li><span><a href="javascript:" class="videoIcon"><i class="fas fa-video"></i></a></span></li>
+                            <li><span><a href="javascript:" class="worldIcon"><i class="fas fa-globe"></i></a></span></li>
+                        </ul>
+                    </div>
+                    <div class="icon-footer-center">
+                        <ul>
+                            <li><span><a href="javascript:" class="nextIcon"><i class="fas fa-chevron-down"></i></a></span></li>
+                        </ul>
+                    </div>
+                    <div class="icon-footer-right">
+                        <ul>
+                            <li><span><a href="javascript:" class="pauseIcon"><i class="fas fa-pause"></i></a></span></li>
+                            <li><span><a href="javascript:" class="mutedIcon"><i class="fas fa-volume-mute"></i></a></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="section2">
+            <div>
+                <ul>
+                    <li>
+                        <div>
+                            <div class="section2-title">
+                                <h2>Lorem, ipsum dolor.</h2>
+                            </div>
+                            <div class="section2-content">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque aut alias fuga praesentium vitae aperiam ipsum illo quos repudiandae expedita libero harum ratione culpa, non excepturi? Aspernatur odit nihil dignissimos?</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <div class="section2-title">
+                                <h2>Lorem, ipsum dolor.</h2>
+                            </div>
+                            <div class="section2-content">
+                                <p>Explicabo minus odio obcaecati tenetur voluptas iste provident architecto quasi? Autem velit corrupti ex quis dolor quasi odio labore accusantium ea ad.</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section id="section3">
+            <div>
+                <h2>Trending Offers</h2>
+                <div class="trending-wrap">
+                    <ul>
+                        <li><img src="https://www.designhotels.com/media/nqkdkdzn/thegeorge-hamburg-germany-t-jpg.jpg?width=479&height=598&format=webp&quality=80&rnd=133053908590970000" alt="img1"></li>
+                        <li><img src="https://www.designhotels.com/media/g1hhdptd/nesthotel-incheon-southkorea-t-jpg.jpg?width=479&height=598&format=webp&quality=80&rnd=133053933513070000" alt="img2"></li>
+                        <li><img src="https://www.designhotels.com/media/sjdahqut/ikikairiretreat-iki-japan-t-jpg.jpg?width=479&height=598&format=webp&quality=80&rnd=133053900186030000" alt="img3"></li>
+                        <li><img src="https://www.designhotels.com/media/ejlbwj25/setouchiretreataonagi-matsuyama-japan-t-jpg.jpg?width=479&height=598&format=webp&quality=80&rnd=133053905186070000" alt="img4"></li>
+                        <li><img src="https://www.designhotels.com/media/l5nd5qtp/hakoneretreat-hakone-japan-t-jpg.jpg?width=479&height=598&format=webp&quality=80&rnd=133053900082630000" alt="img5"></li>
+                        <li><img src="https://www.designhotels.com/media/5rumktpe/trunkhouse-tokyo-japan-jpg.jpg?width=479&height=598&format=webp&quality=80&rnd=133053920264900000" alt="img6"></li>
+                        <li><img src="https://www.designhotels.com/media/nqkdkdzn/thegeorge-hamburg-germany-t-jpg.jpg?width=479&height=598&format=webp&quality=80&rnd=133053908590970000" alt="img1"></li>
+                        <li><img src="https://www.designhotels.com/media/g1hhdptd/nesthotel-incheon-southkorea-t-jpg.jpg?width=479&height=598&format=webp&quality=80&rnd=133053933513070000" alt="img2"></li>
+                        <li><img src="https://www.designhotels.com/media/sjdahqut/ikikairiretreat-iki-japan-t-jpg.jpg?width=479&height=598&format=webp&quality=80&rnd=133053900186030000" alt="img3"></li>
+                        <li><img src="https://www.designhotels.com/media/ejlbwj25/setouchiretreataonagi-matsuyama-japan-t-jpg.jpg?width=479&height=598&format=webp&quality=80&rnd=133053905186070000" alt="img4"></li>
+                        <li><img src="https://www.designhotels.com/media/l5nd5qtp/hakoneretreat-hakone-japan-t-jpg.jpg?width=479&height=598&format=webp&quality=80&rnd=133053900082630000" alt="img5"></li>
+                        <li><img src="https://www.designhotels.com/media/5rumktpe/trunkhouse-tokyo-japan-jpg.jpg?width=479&height=598&format=webp&quality=80&rnd=133053920264900000" alt="img6"></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="section4">
+            <div>
+                <h2 class="ir_so">Gallery</h2>
+                <div class="page-tab tabMenu">
+                    <div class="container">
+                        <form id="gallery-filter" class="filter-form">
+                            <span class="form-item">
+                                <input type="radio" name="filter" id="filter-all" value="all" checked>
+                                <label for="filter-all">All</label>
+                            </span>
+                            <span class="form-item">
+                                <input type="radio" name="filter" id="filter-beach" value="beach">
+                                <label for="filter-beach">beach</label>
+                            </span>
+                            <span class="form-item">
+                                <input type="radio" name="filter" id="filter-city" value="city">
+                                <label for="filter-city">city</label>
+                            </span>
+                            <span class="form-item">
+                                <input type="radio" name="filter" id="filter-mountain" value="mountain">
+                                <label for="filter-mountain">mountain</label>
+                            </span>
+                        </form>
+                    </div>
+                </div>
+                <div class="gallery">
+                    <ul class="gallery-wrap">
+                        <!-- <li>
+                            <div>
+                                <a href="javascript:" class="galleryBt">
+                                    <span class="g-video">
+                                        <video src="./video/galleryVideo01.mp4" autoplay muted poster="./img/videoBg01.jpg"></video>
+                                    </span>
+                                    <span class="g-color"></span>
+                                    <span class="g-title">
+                                        <span><strong>The Ride</strong></span>
+                                        <span><b>Lorem ipsum dolor sit amet.</b></span>
+                                        <span><i class="exploreBt">Explore</i></span>
+                                    </span>
+                                </a>
+                            </div>
+                        </li> -->
+                    </ul>
+                    <div class="loadMore">
+                        <button class="loadMoreBt">Load More</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer id="footer">
+        <div class="container">
+            <div class="f-sitemap">
+                <ul>
+                    <li>
+                        <h4><i></i></h4>
+                        <a href="#;">ABOUT</a>
+                        <div class="f-sub">
+                            <ul>
+                                <li><a href="#;">about us</a></li>
+                                <li><a href="#;">sign up</a></li>
+                                <li><a href="#;">membership</a></li>
+                                <li><a href="#;">contact</a></li>
+                                <li><a href="#;">careers</a></li>
+                                <li><a href="#;">partnership</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <h4><i></i></h4>
+                        <a href="#;">COMMUNITY</a>
+                        <div class="f-sub">
+                            <ul>
+                                <li><a href="#;">about us</a></li>
+                                <li><a href="#;">sign up</a></li>
+                                <li><a href="#;">membership</a></li>
+                                <li><a href="#;">contact</a></li>
+                                <li><a href="#;">careers</a></li>
+                                <li><a href="#;">partnership</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <h4><i></i></h4>
+                        <a href="#;">PRESS</a>
+                        <div class="f-sub">
+                            <ul>
+                                <li><a href="#;">about us</a></li>
+                                <li><a href="#;">sign up</a></li>
+                                <li><a href="#;">membership</a></li>
+                                <li><a href="#;">contact</a></li>
+                                <li><a href="#;">careers</a></li>
+                                <li><a href="#;">partnership</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <h4><i></i></h4>
+                        <a href="#;">PROJECT</a>
+                        <div class="f-sub">
+                            <ul>
+                                <li><a href="#;">about us</a></li>
+                                <li><a href="#;">sign up</a></li>
+                                <li><a href="#;">membership</a></li>
+                                <li><a href="#;">contact</a></li>
+                                <li><a href="#;">careers</a></li>
+                                <li><a href="#;">partnership</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <h4><i></i></h4>
+                        <a href="#;">POLICY</a>
+                        <div class="f-sub">
+                            <ul>
+                                <li><a href="#;">about us</a></li>
+                                <li><a href="#;">sign up</a></li>
+                                <li><a href="#;">membership</a></li>
+                                <li><a href="#;">contact</a></li>
+                                <li><a href="#;">careers</a></li>
+                                <li><a href="#;">partnership</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <h4><i></i></h4>
+                        <a href="#;">HELP</a>
+                        <div class="f-sub">
+                            <ul>
+                                <li><a href="#;">about us</a></li>
+                                <li><a href="#;">sign up</a></li>
+                                <li><a href="#;">membership</a></li>
+                                <li><a href="#;">contact</a></li>
+                                <li><a href="#;">careers</a></li>
+                                <li><a href="#;">partnership</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="f-copyright-sns">
+                <div class="copyright">
+                    <span>&copy; Design Hotles 2023</span>
+                    <span><i>&middot;</i></span>
+                    <span>&copy; Design Hotles 2023</span>
+                    <span><i>&middot;</i></span>
+                    <span>&copy; Design Hotles 2023</span>
+                    <span><i>&middot;</i></span>
+                    <span>&copy; Design Hotles 2023</span>
+                </div>
+                <div class="sns">
+                    <span><a href="#;"><i class="fab fa-youtube"></i></a></span>
+                    <span><a href="#;"><i class="fab fa-twitter-square"></i></a></span>
+                    <span><a href="#;"><i class="fab fa-instagram"></i></a></span>
+                    <span><a href="#;"><i class="fab fa-pinterest-square"></i></a></span>
+                    <span><a href="#;"><i class="fab fa-linkedin"></i></a></span>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+</body>
+</html>
