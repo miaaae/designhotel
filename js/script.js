@@ -3,7 +3,7 @@ const appbar=$('.app-bar-wrap .appbarBt');
 const mobileMenu=$('.mobile-menu')
 const appbarCloseBt=$('.appbarCloseBt')
 
-console.log('침투했다!');
+console.log('찾았다!');
 
 appbar.on('click', function(){
     mobileMenu.stop().animate({left: 0},500);
@@ -31,7 +31,7 @@ console.log(vidH) */
 let videoPlay='on';
 let soundMuted='off';
 
-$('#mainVideo').get(0).autoplay=true;
+$('#mainVideo').get(0).autoplay=true;햐
 $('#mainVideo').get(0).loop=0;
 $('#mainVideo').get(0).muted=true;
 
