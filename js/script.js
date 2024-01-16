@@ -31,7 +31,7 @@ console.log(vidH) */
 let videoPlay='on';
 let soundMuted='off';
 
-$('#mainVideo').get(0).autoplay=true;햐
+$('#mainVideo').get(0).autoplay=true;
 $('#mainVideo').get(0).loop=0;
 $('#mainVideo').get(0).muted=true;
 
